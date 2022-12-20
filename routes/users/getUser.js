@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
-import {User} from "../../models/userModel.js";
+import { User } from "../../models/userModel.js";
+
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ export default async function getAllUsers(req, res) {
   const skip = parseInt(req.query.skip || 0);
   const idQuery = id ? { _id: ObjectId(id) } : {};
   const result = await User.find(idQuery)
+    .select("-password")
     .populate("role")
     .limit(limit)
     .skip(skip);

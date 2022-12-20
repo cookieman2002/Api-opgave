@@ -32,7 +32,7 @@ export default async function getItems(req, res) {
     previous: previousLink,
     next: nextLink,
     results: result.map((item) => ({
-      ...item,
+      ...item._doc,
       url: URLBuilder(item._id, "items"),
     })),
   };

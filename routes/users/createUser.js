@@ -29,7 +29,7 @@ export default async function createUser(req, res) {
     const user = new User({
       email: req.body.email,
       password: hash,
-      role: req.body.role
+      // role: req.body.role
     });
     await user.save();
     res.status(201);

@@ -5,7 +5,6 @@ import { Schema } from "mongoose";
 export default async function updateItems(req, res) {
   try {
     let document = {};
-    let oldResult;
     if (!req.file) {
       document = { ...req.body };
     } else {

@@ -1,6 +1,6 @@
 import Jwt from "jsonwebtoken"
-import token from "../routes/auth/token.js"
 import dotenv from "dotenv"
+import token from "../routes/auth/token.js"
 
 dotenv.config()
 
